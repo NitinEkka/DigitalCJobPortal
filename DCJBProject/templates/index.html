@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="destinations" id="destinations">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+
+						<div class="section_title">
+							<h2>JOBS PORTAL</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row destinations_row">
+					<div class="col">
+						<div class="destinations_container item_grid">
+							<br>
+							{% for jb in jbs %}
+							<!-- Destination -->
+							<div class="destination item">
+								<br>
+								<br>
+								<hr>
+								<div class="destination_content">
+									<div class="destination_title">Location : {{jb.location}}
+									</div>
+									<div class="destination_title">Skills : {{jb.skills}}
+									</div>
+									<div class="destination_title">Experience : {{jb.exp}}
+									</div>
+									<div class="destination_title">Pay : {{jb.pay}}
+									</div>
+									<div class="destination_title">Contact Number : {{jb.contact}}
+									</div>
+									<div class="destination_price">Address : {{jb.address}}</div>
+								</div>
+							</div>
+
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
+
+{% endblock %}
